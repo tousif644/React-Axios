@@ -1,7 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const SpecialChart = () => {
   const [phones, setPhones] = useState([]);
@@ -24,12 +30,14 @@ const SpecialChart = () => {
   }, []);
   console.log(phones);
   return (
-    <BarChart width={800} height={400} data={phones}>
-      <Bar dataKey="value" fill="#8884d8" />
-      <XAxis dataKey="name" fill="#8884d8" />
-      <Tooltip />
-      <YAxis></YAxis>
-    </BarChart>
+      <div className="duration-500 ease-in-out">
+          <BarChart  width={1200} height={600} data={phones}>
+        <Bar dataKey="value" fill="#0984e3" />
+        <XAxis dataKey="name" fill="#00cec9"/>
+        <Tooltip />
+        <YAxis dataKey="value"></YAxis>
+      </BarChart>
+      </div>
   );
 };
 
